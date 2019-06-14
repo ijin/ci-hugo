@@ -38,10 +38,7 @@ Key: private ssh key
 
 2. ADD ssh fingerprint
 
-Add Environment Variable
-
-Name: `SSH_FINGERPRINT`
-Value: *you ssh fingerprint*
+ADD ssh finger prints with `add_ssh_keys` to `.circleci/config.yml`
 
 ## GitHub pages
 
