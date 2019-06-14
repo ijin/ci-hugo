@@ -45,8 +45,18 @@ ADD ssh finger prints with `add_ssh_keys` to `.circleci/config.yml`
 ```
 git checkout --orphan gh-pages
 git rm -rf .
-git commit --allow-empty -m ':rocket:'
-git push origin HEAD
+mkdir .circleci
+cat <<EOF > .circleci/config.yml
+version: 2
+jobs:
+  build:
+    branches:
+      only: master
+EOF
+git add .circleci
+git commit -m ':rocket:'
+git push origin gh-pages
+git checkout master
 ```
 
 ## Configure CircleCI
