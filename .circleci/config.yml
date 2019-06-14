@@ -33,6 +33,6 @@ jobs:
           command: |
             cd src/site/public
             git add --all
-            git commit -m "Automated publish to gh-pages [ci skip]"
+            git commit --allow-empty -m "Automated publish to gh-pages [ci skip]"
             git push
 
