@@ -1,0 +1,39 @@
+version: 2.1
+jobs:
+  build:
+    branches:
+      ignore:
+        - gh-pages
+    docker:
+      - image: cibuilds/hugo:latest
+    working_directory: ~/hugo
+    environment:
+      HUGO_BUILD_DIR: ~/hugo/public
+    steps:
+      - checkout
+      - run:
+          name: Git config
+          command: |
+            git config --global user.email "noreply@example.com"
+            git config --global user.name "CircleCI Bot"
+      - run:
+          name: Git submodule
+          command: |
+            git submodule sync
+            git submodule update --init
+      - run:
+          name: Git worktree
+          command: |
+             rm -rf $HUGO_BUILD_DIR
+             git worktree add -B gh-pages $HUGO_BUILD_DIR origin/gh-pages
+      - run:
+          name: Hugo build
+          command: |
+            hugo -v -s src/site -d $HUGO_BUILD_DIR
+      - deploy:
+          command: |
+            cd $HUGO_BUILD_DIR
+            git add --all
+            git commit -m "Automated publish to gh-pages [ci skip]"
+            git push
+
