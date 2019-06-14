@@ -20,3 +20,10 @@ hugo serve -D -s src/site
 Just push/merge to git master branch, netlify will take care of the rest
 
 ## Thank you ServerlessDays Amsterdam and Stockholm for the template
+
+```
+git checkout --orphan gh-pages
+git rm -rf .
+git commit --allow-empty -m ':rocket:'
+git push origin HEAD
+```

@@ -31,7 +31,9 @@ jobs:
             hugo -v -s src/site -d $HUGO_BUILD_DIR
       - deploy:
           command: |
+            ls -alh
             cd $HUGO_BUILD_DIR
+            ls -alh
             git add --all
             git commit -m "Automated publish to gh-pages [ci skip]"
             git push
