@@ -1,7 +1,4 @@
-# ServerlessDays Tokyo
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/bb6ae8b2-7719-47d3-b40b-a5fbf2f7f57c/deploy-status)](https://app.netlify.com/sites/wonderful-perlman-4b3560/deploys)
-
+# CircleCI Hugo to GitHub pages
 
 ## Site Generator
 
@@ -15,11 +12,38 @@ The site is built on top of [Hugo](https://gohugo.io).
 hugo serve -D -s src/site
 ```
 
-## Deploy
+## Deploy Key
 
-Just push/merge to git master branch, netlify will take care of the rest
+### local
+Create a deploy key
 
-## Thank you ServerlessDays Amsterdam and Stockholm for the template
+```
+ssh-keygen -m pem -t rsa
+```
+
+### GitHub
+
+Add deploy key in [settings](https://github.com/ijin/serverlessdays-tokyo/settings/keys)
+
+Title: `CircleCI-write`
+Key: public ssh key
+[x] Allow write access
+
+### CircleCI
+
+1. Add deploy key in `Project Settings`->`SSH Permissions`
+
+Hostname: `github.com`
+Key: private ssh key
+
+2. ADD ssh fingerprint
+
+Add Environment Variable
+
+Name: `SSH_FINGERPRINT`
+Value: *you ssh fingerprint*
+
+## GitHub pages
 
 ```
 git checkout --orphan gh-pages
@@ -27,3 +51,11 @@ git rm -rf .
 git commit --allow-empty -m ':rocket:'
 git push origin HEAD
 ```
+
+## Configure CircleCI
+
+set fingerprints to `add_ssh_keys` step in `.circleci/config.yml`
+
+## Deploy
+
+Just push/merge to git master branch, CircleCI will take care of the rest
