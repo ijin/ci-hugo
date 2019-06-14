@@ -1,0 +1,54 @@
+baseURL = "https://tokyo.serverlessdays.io/"
+languageCode = "en-us"
+title = "ServerlessDays Tokyo"
+
+[params]
+    logo = "/images/logo_tokyo.png"
+    description = "A community based conference focusing on Serverless based platforms and technologies. Tokyo, October, 2019"
+    mascot = "/images/Anteater_mascot.png"
+    date = "October 22, 2019"
+    city = "Tokyo"
+    twitter = "serverlessjp"
+    email = "japan@serverlessdays.io"
+    backgroundImage = "/images/tokyo_blue.jpg"
+    backgroundImageAuthor = "Photo by Moyan Brenn"
+    backgroundImageCopyRight = "CC BY"
+    ccLink = "https://creativecommons.org/licenses/by/2.0/"
+    prospectus = "/Prospectus_ServerlessDays_Stockholm_2019.pdf"
+    ticketDate = "July 1, 2019"
+    ticketSaleUrl = "https://serverlessdays-stockholm-2019.eventbrite.com"
+    cfpDate = "June 17, 2019"
+    cfpUrl = "https://www.papercall.io/serverlessdaysstockholm2019"
+    emailForm = "https://forms.gle/ExTEhCahRuJYKv1d6"
+
+[[params.dates]]
+    date = "June 17, 2019"
+    text = "CFP Opens"
+    done = false
+
+[[params.dates]]
+    date = "July 1, 2019"
+    text = "Tickets go on sale"
+    done = false
+
+[[params.dates]]
+    date = "September 7, 2019"
+    text = "CFP closes"
+    done = false
+
+[[params.dates]]
+    date = "September 21, 2019"
+    text = "Speakers announced"
+    done = false    
+
+[[params.dates]]
+    date = "Octoboer 21, 2019"
+    text = "Serverless Workshops"
+    done = false    
+
+[params.venue]
+    name = "Tabloid"
+    link = "http://http://www.tabloid-tcd.com"
+    map = "https://www.google.co.jp/maps?f=q&source=s_q&hl=ja&geocode&q=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%B8%AF%E5%8C%BA%E6%B5%B7%E5%B2%B82-6-24&sll=35.650183,139.759182&sspn=0.02455,0.035019&brcurrent=3,0x60188bcc42ac28a7:0xaa862d8fff6224dc,0&ie=UTF8&hq&hnear=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%B8%AF%E5%8C%BA%E6%B5%B7%E5%B2%B8%EF%BC%92%E4%B8%81%E7%9B%AE%EF%BC%96%E2%88%92%EF%BC%92%EF%BC%94&z=16"
+    text = "Tabloid is located at: 2 Chome-6-24 Kaigan, Minato City, Tokyo 105-0022, Japan"
+
