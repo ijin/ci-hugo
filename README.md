@@ -23,7 +23,7 @@ ssh-keygen -m pem -t rsa
 
 ### GitHub
 
-Add deploy key in [settings](https://github.com/ijin/serverlessdays-tokyo/settings/keys)
+Add deploy key in repository
 
 Title: `CircleCI-write`
 Key: public ssh key
@@ -61,7 +61,11 @@ git checkout master
 
 ## Configure CircleCI
 
-set fingerprints to `add_ssh_keys` step in `.circleci/config.yml`
+Set fingerprints to `add_ssh_keys` step in `.circleci/config.yml`
+
+## Set custom domain
+
+Set custom domain in repository settings
 
 ## Deploy
 
