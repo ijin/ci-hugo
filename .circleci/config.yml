@@ -6,8 +6,6 @@ jobs:
     docker:
       - image: cibuilds/hugo:latest
     working_directory: ~/hugo
-    environment:
-      HUGO_BUILD_DIR: ~/hugo/public
     steps:
       - checkout
       - run:
@@ -23,17 +21,14 @@ jobs:
       - run:
           name: Git worktree
           command: |
-             rm -rf $HUGO_BUILD_DIR
-             git worktree add -B gh-pages $HUGO_BUILD_DIR origin/gh-pages
+             git worktree add -B gh-pages src/site/public origin/gh-pages
       - run:
           name: Hugo build
           command: |
-            hugo -v -s src/site -d $HUGO_BUILD_DIR
+            hugo -v -s src/site
       - deploy:
           command: |
-            ls -alh
-            cd $HUGO_BUILD_DIR
-            ls -alh
+            cd src/site/public
             git add --all
             git commit -m "Automated publish to gh-pages [ci skip]"
             git push
