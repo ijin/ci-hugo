@@ -26,6 +26,9 @@ jobs:
           name: Hugo build
           command: |
             hugo -v -s src/site
+      - add_ssh_keys:
+          fingerprints:
+            - "8c:71:ee:78:63:a1:cc:52:76:68:20:03:2f:9e:84:08"
       - deploy:
           command: |
             cd src/site/public
